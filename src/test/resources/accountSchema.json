@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "title": "Account",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "balance": {
+      "type": "integer"
+    },
+    "transactions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "payeeId": {
+            "type": "integer"
+          },
+          "payerId": {
+            "type": "integer"
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "required": [
+            "payeeId",
+            "payerId",
+            "amount",
+            "timestamp"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "balance",
+    "transactions"
+  ]
+}
